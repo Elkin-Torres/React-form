@@ -1,0 +1,28 @@
+@use "../variables" as v;
+
+.container__box{
+display: grid;
+gap: .5rem;
+width: 50%;
+max-width: 31.25rem;
+padding: 1.5rem;
+background-color:v.$container-box-bg;
+border-radius: 4px;
+
+    >p{
+        justify-self: center;
+        color: v.$main-color-font;
+
+        span{
+            color: v.$second-color;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media screen and (max-width:650px) {
+        width:70%;
+    }
+}

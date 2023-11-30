@@ -1,0 +1,12 @@
+@use "../variables" as v;
+
+@mixin input(){
+    input,
+    select{
+        padding: .2rem;
+        border-radius: 4px;
+        background-color: v.$input-color-bg;
+        color: v.$main-color-font;
+        letter-spacing: .1rem;
+    }
+}

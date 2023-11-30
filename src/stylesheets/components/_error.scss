@@ -1,0 +1,6 @@
+@use "../variables" as v;
+
+.container__error{
+    color: v.$error-info;
+    display: none;
+}
