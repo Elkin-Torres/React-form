@@ -1,6 +1,10 @@
 @use "../variables" as v;
 
-.container__error{
+/* .container__error{
     color: v.$error-info;
     display: none;
+} */
+
+.container__message-error{
+    color: v.$error-info;
 }

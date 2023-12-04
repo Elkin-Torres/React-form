@@ -1,12 +1,24 @@
 @use "../variables" as v;
 
 @mixin input(){
-    input,
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
     select{
         padding: .2rem;
         border-radius: 4px;
         background-color: v.$input-color-bg;
         color: v.$main-color-font;
         letter-spacing: .1rem;
+        outline: none;
+
+        &:invalid[data-focus="true"]{
+            border: 1px solid v.$second-color;
+            color: v.$second-color;
+        }
+
+        &:invalid[data-focus="true"] ~ p {
+            display: block;
+        }
     }
 }
