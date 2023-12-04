@@ -4,6 +4,9 @@ import RecoverPassword from "../components/RecoverPassword"
 import Menu from "../components/Menu"
 import SignUp from "../components/SignUp"
 import SignIn from "../components/SignIn"
+import FirstForm from "../components/firstForm"
+import SecondForm from "../components/SecondForm"
+import ThirdForm from "../components/ThirdForm"
 
 
 const MyRouter = () => {
@@ -14,6 +17,9 @@ const MyRouter = () => {
             <Route path="signin" element={<SignIn />} />
             <Route path="signup" element={<SignUp />} />
             <Route path="recoverpassword" element={<RecoverPassword /> } />
+            <Route path="firstform" element={<FirstForm />} />
+            <Route path="secondform" element={<SecondForm />} />
+            <Route path="thirdform" element={<ThirdForm />} />
         </Route>
         <Route path="*" element={<h1>Page not found</h1>} />
         

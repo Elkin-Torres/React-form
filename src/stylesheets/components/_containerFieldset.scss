@@ -14,7 +14,8 @@
     legend{
       font-size: 1.8rem;
       color:v.$main-color-font ;
-      letter-spacing: .1rem
+      letter-spacing: .1rem;
+      text-align:center;
     }
 
     @include f.fieldset;
@@ -28,7 +29,8 @@
       color: red;
     }
 
-    button{
+    
+      button{
       justify-self: center;
       width: 80%;
       background-color: v.$second-color;
@@ -42,6 +44,20 @@
         transform: scale(1.05);
       }
     }
+
+      .container__btns-form{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        width: 80%;
+        gap: 1rem;
+
+        a,
+        button {
+          width: 100%;
+        }
+
+      }
 
     @media screen and (max-width:800px) {
       button{

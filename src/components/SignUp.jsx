@@ -1,17 +1,36 @@
 import { Formik,Field, Form, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
 import { signUpSchema } from "../schemas/signUpSchema";
+import { useState } from "react";
 
 const initialValuesInfo = {fullNameSignUp:"",emailSignUp:"",passwordSignUp:"",passwordSignUpConfirm:"",genreSignUp:"",termsSignUp:false}
 
 const SignUp = () => {
+
+  const[modal, setModal] = useState(false);
   
   const onSubmit = (values) => {
     console.log(values);
+    setModal(true);
   }
 
   return (
     <main>
+      { modal && (
+        <div className="modal" >
+          <div className="container__box">
+            <fieldset className="container__fieldset modal__fieldset ">
+              <legend> Successful registration! </legend>
+              <p className="modal__text">Your registration was successful, you can now continue with filling out the form!</p>
+              <div className="modal__btns">
+                <Link to={"/firstform"} ><button className="modal__btn">Continue</button></Link>
+                <button onClick={()=>setModal(false)} className="modal__btn">Exit</button>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <div className="container__box">
           <Formik initialValues={initialValuesInfo} onSubmit={onSubmit} validationSchema={signUpSchema} >

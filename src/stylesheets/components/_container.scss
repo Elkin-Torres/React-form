@@ -8,9 +8,14 @@
     max-width: 100vw;
     padding: 1rem;
     background-image: url(../../../media/movies.jpg);
-    background-position: center;
+    //background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    //background-size: cover;
+
+    &-absolute{
+        position: absolute;
+        min-width: 100%;
+    }
 
     @media screen and (max-width:415px) {
         min-width: 415px;

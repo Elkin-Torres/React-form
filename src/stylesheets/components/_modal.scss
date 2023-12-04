@@ -1,0 +1,46 @@
+@use "../variables" as v;
+
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    padding: 1rem;
+    background-color: v.$container-box-bg;
+
+    .container__box{
+        background-color: v.$container-fieldset-modal-bg;
+    }
+
+    &__fieldset{
+        margin: 1.5rem 0;
+    }
+
+    &__text{
+        color: v.$main-color-font;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    &__btns{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        margin-bottom: 1rem;
+
+        & >a,
+        & > button {
+            width: 50%;
+        }
+
+        & a > button{
+            width: 100%;
+        }
+    }
+
+}

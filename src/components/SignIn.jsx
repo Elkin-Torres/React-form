@@ -1,17 +1,37 @@
 import { Formik,Form, Field, ErrorMessage } from "formik";
 import { Link } from "react-router-dom";
 import { signupSchema } from "../schemas/signInSchema";
+import { useState } from "react";
 
 const initialValuesInfo={emailSignIn:"",passwordSignIn:""}
 
 const SignIn = () => {
 
+  const[modal, setModal] = useState(false);
+
   const onSubmit = (values) =>{
     console.log(values);
+    setModal(true);
   }
 
   return (
     <main>
+
+      { modal && (
+        <div className="modal" >
+          <div className="container__box">
+            <fieldset className="container__fieldset modal__fieldset ">
+              <legend> Welcome back! </legend>
+              <p className="modal__text">Your authentication was successful, you can now continue with filling out the form!</p>
+              <div className="modal__btns">
+                <Link to={"/firstform"} ><button className="modal__btn">Continue</button></Link>
+                <button onClick={()=>setModal(false)} className="modal__btn">Exit</button>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <div className="container__box">
           <Formik initialValues={initialValuesInfo} onSubmit={onSubmit} validationSchema={signupSchema}>
@@ -29,6 +49,7 @@ const SignIn = () => {
                 <ErrorMessage name="passwordSignIn" component="p" className="container__message-error" />
               </fieldset>
               <button type="submit" >Login</button>
+              
               <Link to={"/recoverpassword"} >
                 <span className="container__forgot">Forgot password?</span>
               </Link>
