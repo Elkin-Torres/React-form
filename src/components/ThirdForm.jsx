@@ -1,20 +1,55 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import { thirdForm } from "../schemas/thirdForm";
+import { useState } from "react";
 
-    const initialValuesInfo={movieThirdForm:"",theaterThirdForm:"",pageThirdForm:"",notificationThirdForm:""};
+const initialValuesInfo = {
+  movieThirdForm: "",
+  theaterThirdForm: "",
+  pageThirdForm: "",
+  notificationThirdForm: "",
+};
 
 const ThirdForm = () => {
+  const [modal, setModal] = useState(false);
 
-    const onSubmit = (values) =>{
-        console.log(values);
-    }
+  const onSubmit = (values) => {
+    console.log(values);
+    setModal(true);
+  };
 
   return (
     <main>
+      {modal && (
+        <div className="modal">
+          <div className="container__box">
+            <fieldset className="container__fieldset modal__fieldset ">
+              <legend> Completed form! </legend>
+              <p className="modal__text">
+                All the data has been filled out, the form was completed
+                successfully!
+              </p>
+              <div className="modal__btns">
+                <Link to={"/"}>
+                  <button
+                    onClick={() => setModal(false)}
+                    className="modal__btn"
+                  >
+                    Finish
+                  </button>
+                </Link>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      )}
       <div className="container container-absolute">
         <div className="container__box">
-          <Formik validationSchema={thirdForm} onSubmit={onSubmit} initialValues={initialValuesInfo} >
+          <Formik
+            validationSchema={thirdForm}
+            onSubmit={onSubmit}
+            initialValues={initialValuesInfo}
+          >
             <Form autoComplete="off">
               <fieldset className="container__fieldset">
                 <legend>Please fill out the information</legend>
@@ -71,7 +106,11 @@ const ThirdForm = () => {
                   <label htmlFor="notificationThirdForm">
                     Would you like to receive notifications or recommendations?
                   </label>
-                  <Field name="notificationThirdForm" id="notificationThirdForm" as="select">
+                  <Field
+                    name="notificationThirdForm"
+                    id="notificationThirdForm"
+                    as="select"
+                  >
                     <option> Select an option</option>
                     <option> Yes</option>
                     <option> No</option>
@@ -83,8 +122,10 @@ const ThirdForm = () => {
                   />
                 </fieldset>
                 <div className="container__btns-form">
-                <Link to={"/secondform"} ><button>Back</button></Link>
-                <button type="submit">Send</button>
+                  <Link to={"/secondform"}>
+                    <button>Back</button>
+                  </Link>
+                  <button type="submit">Send</button>
                 </div>
               </fieldset>
             </Form>

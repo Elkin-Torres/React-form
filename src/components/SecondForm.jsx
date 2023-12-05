@@ -3,15 +3,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { secondForm } from "../schemas/secondForm";
 
-const initialValuesInfo ={genreSecondForm:"",deviceSecondForm:"",streamingSecondForm:"",platformsSecondForm:""}
 
 const SecondForm = () => {
-
+    
+    const initialValuesInfo ={genreSecondForm:"",deviceSecondForm:"",streamingSecondForm:"",platformsSecondForm:""}
+    
     const[modal, setModal] = useState(false);
 
     const onSubmit = (values) =>{
         console.log(values);
         setModal(true);
+
+        dispatchEvent()
     }
 
   return (
