@@ -7,10 +7,11 @@
   min-height: 100vh;
   max-width: 100vw;
   padding: 1rem;
-  background-image: url(movies.jpg);
-  //background-position: center;
+  background-image: url(/React-form/movies.jpg);
   background-repeat: no-repeat;
-  //background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 
   &-absolute {
     position: absolute;

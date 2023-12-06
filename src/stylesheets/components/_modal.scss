@@ -6,7 +6,7 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     padding: 1rem;
     background-color: v.$container-box-bg;
@@ -43,9 +43,18 @@
         }
     }
 
+    &__btn{
+        display: flex;
+        justify-content: center;
+    }
+
     &-filledout{
         background-image: v.$filled-out-color-bg;
     }
 
+
+    @media screen and (max-width:415px) {
+        min-width: 415px;
+    }
 }
 

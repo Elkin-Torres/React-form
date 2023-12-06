@@ -11,10 +11,13 @@ const ThirdForm = () => {
   const dispatch = useDispatch();
   const {dataThirdForm} = useSelector((store)=> store.infoThirdForm);
 
+  //control when the modal is displayed
   const [modal, setModal] = useState(false);
 
   const onSubmit = (values) => {
     setModal(true);
+
+    //send the information to the store
     dispatch(addInfoThird(values))
   };
 

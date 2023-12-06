@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import { signupSchema } from "../schemas/signInSchema";
 import { useState } from "react";
 
-const initialValuesInfo = { emailSignIn: "", passwordSignIn: "" };
 
 const SignIn = () => {
+  
+  const initialValuesInfo = { emailSignIn: "", passwordSignIn: "" };
+  
+  //control when the modal is displayed
   const [modal, setModal] = useState(false);
 
   const onSubmit = () => {

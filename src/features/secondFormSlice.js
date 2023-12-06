@@ -15,9 +15,17 @@ const secondFormSlice = createSlice({
   reducers: {
     addInfoSecond:(state, action)=>{
         state.dataSecondForm = action.payload;
+    },
+    remInfoSecond:(state)=>{
+      state.dataSecondForm = {
+        genreSecondForm: "",
+        deviceSecondForm: "",
+        streamingSecondForm: "",
+        platformsSecondForm: "",
+      };
     }
   },
 });
 
-export const {addInfoSecond} = secondFormSlice.actions;
+export const {addInfoSecond, remInfoSecond} = secondFormSlice.actions;
 export default secondFormSlice.reducer;

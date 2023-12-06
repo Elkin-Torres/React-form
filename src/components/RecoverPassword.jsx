@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import { recoverPasswordSchema } from "../schemas/recoverPasswordSchema";
 import { useState } from "react";
 
-const initialValuesInfo = {emailRecover:""}
 
 
 const RecoverPassword = () => {
-
+  
+  const initialValuesInfo = {emailRecover:""}
+  
+  //control when the modal is displayed
   const[modal, setModal] = useState(false);
 
   const onSubmit = () =>{

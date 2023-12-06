@@ -1,24 +1,43 @@
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { remInfo } from "../features/firstFormSlice";
+import { remInfoSecond } from "../features/secondFormSlice";
+import { remInfoThird } from "../features/thirdFormSlice";
 
 const FilledOutForm = () => {
+  //to prevent the user from having the option to go to the top of the page
   let changePosition = document.querySelector(".nav ");
   changePosition.style.display = "none";
 
+  //control when the modal is displayed
   const [modal, setModal] = useState(false);
+
+  const dispatch = useDispatch();
 
   const { dataFirstForm } = useSelector((store) => store.infoFirstForm);
   const { dataSecondForm } = useSelector((store) => store.infoSecondForm);
   const { dataThirdForm } = useSelector((store) => store.infoThirdForm);
 
-  function showModal(){
-      setModal(true)
+  function resetValues() {
+    setModal(false);
 
+    //delete store information
+    dispatch(remInfo());
+    dispatch(remInfoSecond());
+    dispatch(remInfoThird());
+
+    let nav = document.querySelector("nav");
+    nav.style.display = "block";
+  }
+
+  function showModal() {
+    //hide final form information
     let data = document.querySelector(".container");
-        data.style.display = "none";
-    
+    data.style.display = "none";
+
+    setModal(true);
   }
 
   return (
@@ -34,10 +53,7 @@ const FilledOutForm = () => {
               </p>
               <div className="modal__btns">
                 <Link to={"/React-form"}>
-                  <button
-                    onClick={() => setModal(false)}
-                    className="modal__btn"
-                  >
+                  <button onClick={() => resetValues()} className="modal__btn">
                     Close
                   </button>
                 </Link>
@@ -115,7 +131,9 @@ const FilledOutForm = () => {
                   <Link to={"/React-form/thirdform"}>
                     <button>Back</button>
                   </Link>
-                  <button onClick={()=> showModal()} type="submit">Send</button>
+                  <button onClick={() => showModal()} type="submit">
+                    Send
+                  </button>
                 </div>
               </fieldset>
             </Form>

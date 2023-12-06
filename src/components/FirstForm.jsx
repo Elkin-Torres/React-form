@@ -11,10 +11,13 @@ const FirstForm = () => {
   const dispatch = useDispatch();
   const { dataFirstForm } = useSelector((store) => store.infoFirstForm);
 
+  //control when the modal is displayed
   const [modal, setModal] = useState(false);
 
   const onSubmit = (values) => {
     setModal(true);
+
+    //send the information to the store
     dispatch(addInfo(values));
   };
 
