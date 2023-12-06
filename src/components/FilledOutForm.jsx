@@ -33,7 +33,7 @@ const FilledOutForm = () => {
                 the form!
               </p>
               <div className="modal__btns">
-                <Link to={"/"}>
+                <Link to={"/React-form"}>
                   <button
                     onClick={() => setModal(false)}
                     className="modal__btn"
@@ -112,7 +112,7 @@ const FilledOutForm = () => {
                   <span> {dataThirdForm.notificationThirdForm} </span>
                 </fieldset>
                 <div className="container__btns-form container__btns-filledOut">
-                  <Link to={"/thirdform"}>
+                  <Link to={"/React-form/thirdform"}>
                     <button>Back</button>
                   </Link>
                   <button onClick={()=> showModal()} type="submit">Send</button>

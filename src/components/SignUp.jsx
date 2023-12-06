@@ -9,8 +9,7 @@ const SignUp = () => {
 
   const[modal, setModal] = useState(false);
   
-  const onSubmit = (values) => {
-    console.log(values);
+  const onSubmit = () => {
     setModal(true);
   }
 
@@ -23,7 +22,7 @@ const SignUp = () => {
               <legend> Successful registration! </legend>
               <p className="modal__text">Your registration was successful, you can now continue with filling out the form!</p>
               <div className="modal__btns">
-                <Link to={"/firstform"} ><button className="modal__btn">Continue</button></Link>
+                <Link to={"/React-form/firstform"} ><button className="modal__btn">Continue</button></Link>
                 <button onClick={()=>setModal(false)} className="modal__btn">Exit</button>
               </div>
             </fieldset>
@@ -79,7 +78,7 @@ const SignUp = () => {
           </Form>
           </Formik>
           <p>Already have an account?
-            <Link to={"/signin"} >
+            <Link to={"/React-form/signin"} >
               <span> Sign in</span>
             </Link>
           </p>

@@ -13,7 +13,7 @@ import FilledOutForm from "../components/FilledOutForm"
 const MyRouter = () => {
   return (
     <Routes>
-        <Route path="/" element={<Menu />} >
+        <Route path="/React-form" element={<Menu />} >
             <Route index element={<Home />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="signup" element={<SignUp />} />

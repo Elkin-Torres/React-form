@@ -10,8 +10,7 @@ const RecoverPassword = () => {
 
   const[modal, setModal] = useState(false);
 
-  const onSubmit = (values) =>{
-    console.log(values);
+  const onSubmit = () =>{
     setModal(true);
   }
 
@@ -25,7 +24,7 @@ const RecoverPassword = () => {
               <legend> Message sent </legend>
               <p className="modal__text">A message with the information to recover your password was sent to your email, please check it!</p>
               <div className="modal__btns">
-                <Link to={"/"} ><button onClick={()=> setModal(false)} className="modal__btn">Accept</button></Link>
+                <Link to={"/React-form"} ><button onClick={()=> setModal(false)} className="modal__btn">Accept</button></Link>
               </div>
             </fieldset>
           </div>
@@ -48,7 +47,7 @@ const RecoverPassword = () => {
             </Form>
           </Formik>
           <p>Already have an account?
-          <Link to={"/signin"} ><span> Sign in!</span></Link>
+          <Link to={"/React-form/signin"} ><span> Sign in!</span></Link>
           </p>
         </div>
       </div>

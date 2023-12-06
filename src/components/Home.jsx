@@ -11,8 +11,8 @@ const Home = () => {
         <p>On this page you will find any movie, serie or TV show you want, we have the best image and audio quality on the entire web, you just have to register to enjoy all our content, so what are you waiting for? Let&apos;s start with the fun!</p>
         </div>
         <div className="container__home-btns">
-            <Link to={"/signin"} ><button>Sign In</button></Link>
-            <Link to={"/signup"} ><button>Sign Up</button></Link>
+            <Link to={"/React-form/signin"} ><button>Sign In</button></Link>
+            <Link to={"/React-form/signup"} ><button>Sign Up</button></Link>
         </div>
     </div>
   </div>

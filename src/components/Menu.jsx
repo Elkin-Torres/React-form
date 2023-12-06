@@ -6,8 +6,8 @@ const Menu = () => {
   return (
     <>
     <nav className="nav">
-        <Link to={"/"} className="nav-max">Home</Link>
-        <Link to={"/"} className="nav-min" > <IoHome /></Link>
+        <Link to={"/React-form"} className="nav-max">Home</Link>
+        <Link to={"/React-form"} className="nav-min" > <IoHome /></Link>
 
     </nav>
     <Outlet />
