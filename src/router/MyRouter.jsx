@@ -7,6 +7,7 @@ import SignIn from "../components/SignIn"
 import FirstForm from "../components/firstForm"
 import SecondForm from "../components/SecondForm"
 import ThirdForm from "../components/ThirdForm"
+import FilledOutForm from "../components/FilledOutForm"
 
 
 const MyRouter = () => {
@@ -20,6 +21,7 @@ const MyRouter = () => {
             <Route path="firstform" element={<FirstForm />} />
             <Route path="secondform" element={<SecondForm />} />
             <Route path="thirdform" element={<ThirdForm />} />
+            <Route path="filledoutform" element={<FilledOutForm />} />
         </Route>
         <Route path="*" element={<h1>Page not found</h1>} />
         

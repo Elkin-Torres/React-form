@@ -2,20 +2,27 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Link } from "react-router-dom";
 import { thirdForm } from "../schemas/thirdForm";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addInfoThird } from "../features/thirdFormSlice";
 
-const initialValuesInfo = {
+/* const initialValuesInfo = {
   movieThirdForm: "",
   theaterThirdForm: "",
   pageThirdForm: "",
   notificationThirdForm: "",
-};
+}; */
 
 const ThirdForm = () => {
+
+  const dispatch = useDispatch();
+  const {dataThirdForm} = useSelector((store)=> store.infoThirdForm);
+
   const [modal, setModal] = useState(false);
 
   const onSubmit = (values) => {
     console.log(values);
     setModal(true);
+    dispatch(addInfoThird(values))
   };
 
   return (
@@ -30,7 +37,7 @@ const ThirdForm = () => {
                 successfully!
               </p>
               <div className="modal__btns">
-                <Link to={"/"}>
+                <Link to={"/filledoutform"}>
                   <button
                     onClick={() => setModal(false)}
                     className="modal__btn"
@@ -46,9 +53,9 @@ const ThirdForm = () => {
       <div className="container container-absolute">
         <div className="container__box">
           <Formik
-            validationSchema={thirdForm}
+            initialValues={dataThirdForm || ''}
             onSubmit={onSubmit}
-            initialValues={initialValuesInfo}
+            validationSchema={thirdForm}
           >
             <Form autoComplete="off">
               <fieldset className="container__fieldset">

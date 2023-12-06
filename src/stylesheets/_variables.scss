@@ -1,9 +1,16 @@
-
-$container-box-bg:rgba(0,0,0,.75);
-$container-fieldset-modal-bg:rgba(0,0,0,.9);
-$input-color-bg:#333;
+$container-box-bg: rgba(0, 0, 0, 0.75);
+$container-fieldset-modal-bg: rgba(0, 0, 0, 0.9);
+$input-color-bg: #333;
+$filled-out-color-bg: linear-gradient(
+  to right,
+  #e50914,
+  #e4002b,
+  #e1003d,
+  #dc004d,
+  #d5005b
+);
 
 //font-colors
 $main-color-font: #fff;
-$second-color:#e50914;
+$second-color: #e50914;
 $error-info: #e87c03;

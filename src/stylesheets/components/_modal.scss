@@ -43,4 +43,8 @@
         }
     }
 
+    &-filledout{
+        background-image: v.$filled-out-color-bg;
+    }
+
 }
